@@ -1,9 +1,9 @@
 class elementMatch {
-
-	elementArray = [];
-	elementObject = {};
-	#heightMax = 0;
-	#widthMax = 0;
+  
+  elementArray = []; 
+  elementObject = {};
+  #heightMax = 0;
+  #widthMax = 0;
 
   constructor(elements) {
 
