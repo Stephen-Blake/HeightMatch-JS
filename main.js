@@ -1,6 +1,6 @@
 class elementMatch {
-  
-  elementArray = []; 
+
+  elementArray = [];
   elementObject = {};
   #heightMax = 0;
   #widthMax = 0;
@@ -19,9 +19,10 @@ class elementMatch {
 		if(
 			!Array.isArray(this.elementArray) ||
 			this.elementArray.length < 2
-		)
-			console.warn('Only Contains One Element/s');
-			return;
+		){
+      console.warn('Only Contains One Element/s');
+      return;
+    }
 
 		this.#setElementsObject();
 
@@ -44,8 +45,9 @@ class elementMatch {
 	#loopElements( passedFunction ){
 
 		this.elementArray.forEach( (element, key) => {
-			if(element instanceof Element)
-				passedFunction(element, key);
+			if(element instanceof Element){
+        passedFunction(element, key);
+      }
 		});
 
 	}
@@ -93,10 +95,11 @@ class elementMatch {
 
 	addElements(elements){
 
-		if(Array.isArray(elements))
-			this.elementArray.push(...elements);
-			this.#setElementsObject();
-			return this;
+		if(Array.isArray(elements)){
+      this.elementArray.push(...elements);
+      this.#setElementsObject();
+      return this;
+    }
 
 		this.elementArray.push(elements);
 
@@ -136,7 +139,7 @@ class elementMatch {
 window.onload = () => {
 
 	const classElementMatch = new elementMatch(
-		[...document.querySelectorAll('.home_block_class_wrap')]
+		[...document.querySelectorAll('.unifyheight_match')]
 	)
 	.runHeightMatch();
 
